@@ -1,13 +1,216 @@
+/*
+  Variables
+*/
+$link-active: hsl(220, 98%, 61%);
+$check-bg: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+// Light theme colors
+$light: hsl(0, 0%, 98%);
+$todo-text: hsl(235, 19%, 35%);
+$filters: hsl(236, 9%, 61%);
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-h1 {
-  color: red;
+// Box Shadows
+.shadow {
+  -webkit-box-shadow: 0px 0px 25px 1px hsl(236, 9%, 61%);
+  box-shadow: 0px 0px 25px 1px hsl(236, 9%, 61%);
 }
 
-p {
-  font-size: 1.4rem;
+/*
+  Header Styles
+*/
+body {
+  background: url('../images/bg-mobile-light.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #f6f6f8;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 2.4rem 1.4rem;
+
+  &__title {
+    letter-spacing: 0.7rem;
+    color: $light;
+  }
+}
+
+::placeholder {
+  font-size: 1rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  background-color: $light;
+  border-radius: 0.4rem;
+  margin: 0 auto;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    width: 100%;
+
+    &__items {
+      display: flex;
+      width: 90%;
+    }
+
+    &__todo {
+      outline: none;
+      border: none;
+      width: 100%;
+    }
+
+    button {
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+
+.items-circle {
+  border: 1px solid #ddd;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 25px;
+  height: 22.5px;
+  margin-right: 1rem;
+}
+
+/*
+  Items container
+*/
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 1rem auto;
+  background-color: $light;
+  border-radius: 0.4rem;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0;
+    color: $filters;
+
+    &__lefts {
+      margin-left: 1rem;
+    }
+
+    &__clear {
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
+    &__clear:hover {
+      
+    }
+
+    &__clear:hover {
+
+    }
+  }
+}
+
+/*
+  Each individual todo styles
+*/
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.45rem 0;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1rem;
+
+    &__checked {
+      cursor: pointer;
+    }
+
+    &__item {
+      font-size: 1rem;
+      color: $todo-text;
+    }
+
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+
+.completed {
+  background: $check-bg;
+  background-image: url('../images/icon-check.svg');
+}
+
+/*
+  Filter Box
+*/
+.filterbox {
+  display: flex;
+  justify-content: center;
+  background-color: $light;
+  width: 90%;
+  margin: 1.5rem auto;
+  padding: 1rem 0;
+  border-radius: 0.4rem;
+
+  p {
+    font-weight: 700;
+    color: $filters;
+    cursor: pointer;
+  }
+
+  p.active {
+    color: $link-active;
+  }
+
+  > *:not(:last-child) {
+    margin-right: 1.85rem;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: $filters;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 3.75rem;
 }

@@ -2,18 +2,64 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To do list</title>
+
+  <!-- Link para el favicon -->
+  <link rel="icon" type="image/x-icon" href="./assets/logos/favicon-32x32.png">
+
+  <!-- Link para iconos de FontAwesome -->
+  <script src="https://kit.fontawesome.com/64d25ab310.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <h1>Hola Mundo</h1>
+  <header id="header" class="header">
+    <h1 class="header__title">TODO</h1>
+    <img src="./assets/images/icon-moon.svg" alt="icon of the mode" id="main-icon">
   </header>
-  <div id="app"></div>
-  <script type="module" src="./js/main.js"></script>
+
+  <main id="main" class="main">
+    <form class="form shadow" id="form">
+      <div class="form__container">
+        <div class="form__container__items">
+          <div class="form__container__circle items-circle check-holder"></div>
+          <input type="text" id="todo-item" class="form__container__todo" placeholder="Create a new todo...">
+        </div>
+
+        <button type="submit"><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </form>
+
+    <section id="todo-cont" class="items shadow">
+      <article id="todo-items" class="items__container">
+
+      </article>
+
+      <div id="main-footer" class="items__footer">
+        <p id="items-left" class="items__footer__lefts">0 items left</p>
+        <p id="items-clear" class="items__footer__clear">Clear Completed</p>
+      </div>
+    </section>
+
+    <article id="filter" class="filterbox shadow">
+      <p id="filter-all" class="filterbox__filters active">All</p>
+      <p id="filter-active" class="filterbox__filters">Active</p>
+      <p id="filter-completed" class="filterbox__filters">Completed</p>
+    </article>
+  </main>
+
+  <footer id="footer" class="footer">
+    <p>Drag and drop to reorder list</p>
+  </footer>
+
+  <script src="./js/main.js" type="module"></script>
 </body>
 
 </html>
